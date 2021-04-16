@@ -28,3 +28,7 @@ Route::get('/hommes', [MembreController::class, 'hommes'])->name('membres.hommes
 // CRUD -> create
 Route::get('/admin/membres/create',[CreateMembreController::class, 'create'])->name('create.membre');
 Route::post('/admin/membres/store',[CreateMembreController::class, 'store'])->name('store.membre');
+
+// CRUD -> delete
+Route::delete('/admin/membre/{id}/delete', [MembreController::class, 'destroy'])->name('destroy.membre')
+;

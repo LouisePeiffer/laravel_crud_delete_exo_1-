@@ -19,4 +19,8 @@ class MembreController extends Controller
         $dataHommes = Membre::where('genre', 'homme')->take(15)->get();
         return view('pages.hommes', compact('dataHommes'));
     }
+    public function destroy(Membre $id) {
+        $id->delete();
+        return redirect()->back();
+    }
 }
